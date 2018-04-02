@@ -20,6 +20,6 @@ select 0
 focus right
 select 1
 focus down
-select 3
-focus left
 select 2
+focus left
+select 3
