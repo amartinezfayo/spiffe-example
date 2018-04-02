@@ -10,16 +10,17 @@ tar -xzf nginx.tar.gz -C /opt/spiffe-nginx
 # Create log folder 
 mkdir -p ${NGINX_LOGS_DIR}
 touch ${NGINX_LOGS_DIR}/access.log  ${NGINX_LOGS_DIR}/error.log
+chmod 777 -R ${NGINX_LOGS_DIR}
 chmod 777 ${NGINX_DIR}
 
 # Create certs forlder
 mkdir /certs
 chmod 777 /certs
 
-chmod 777 /dev/stdout
-
 # Create blog user
 useradd -m nginx-blog
+
+chmod 777 /dev/stdout 
 
 # Clean installation files
 rm install_nginx.sh nginx.tar.gz vendor.sh
