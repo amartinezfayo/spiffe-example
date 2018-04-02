@@ -1,9 +1,9 @@
 defscrollback 10000
 
-screen -t spiffe-server bash -c "./connect.sh '/bin/bash'"
-screen -t spiffe-agent bash -c "./connect.sh '/bin/bash'"
-screen -t server bash -c "./connect.sh '/bin/bash'"
-screen -t proxy bash -c "./connect.sh '/bin/bash'"
+screen -t spire-server bash -c "./connect.sh '/bin/bash'"
+screen -t spire-agent bash -c "./connect.sh '/bin/bash'"
+screen -t nginx-blog bash -c "./connect.sh '/bin/bash'"
+screen -t nginx-fe bash -c "./connect.sh '/bin/bash'"
 
 mousetrack on
 rendition so wb
