@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-docker-compose exec build bash -c $1
+docker-compose exec spiffe-nginx bash -c $1

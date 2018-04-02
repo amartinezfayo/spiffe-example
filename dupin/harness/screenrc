@@ -6,8 +6,6 @@ screen -t server bash -c "./connect.sh '/bin/bash'"
 screen -t proxy bash -c "./connect.sh '/bin/bash'"
 
 mousetrack on
-mouseselect on 
-mouse-select-pane on
 rendition so wb
 caption string "%n %t"
 
