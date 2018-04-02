@@ -3,13 +3,7 @@ SPIRE_REPO ?= spiffe/spire
 SPIRE_REF  ?= 68d6dd46a6f1be5c16c83c3748d8a811b0104fbb # branch, tag or commit hash
 DOCKER_IMAGE = spiffe-nginx
 
-all: checkout build-artifact
-
-checkout:
-	rm -rf spiffe-nginx/repos
-	mkdir spiffe-nginx/repos
-	git clone git@github.com:$(SPIRE_REPO).git spiffe-nginx/repos/spire
-	git -C spiffe-nginx/repos/spire checkout $(SPIRE_REF)
+all: build-artifact
 
 build-artifact:
 	docker-compose build $(DOCKER_IMAGE)

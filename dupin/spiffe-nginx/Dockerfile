@@ -26,12 +26,15 @@ RUN ./build.sh artifact
 # Copy nginx local configurations
 COPY configurations /usr/local/nginx/
 
-# Build spiffe nginx
-COPY nginx /opt/spiffe-nginx
-WORKDIR /opt/spiffe-nginx
+# Install spire
+COPY spire /tmp
+WORKDIR /tmp
+RUN ./install_spire.sh
+
+# Install spiffe-nginx
+COPY nginx /tmp
+WORKDIR /tmp
 RUN ./vendor.sh
 RUN ./install_nginx.sh
 
-# Install spire
-RUN ./install_spire.sh
-
+WORKDIR /opt/spiffe-nginx

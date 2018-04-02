@@ -4,12 +4,12 @@ declare -r NGINX_DIR="/usr/local/nginx"
 declare -r NGINX_LOGS_DIR="${NGINX_DIR}/logs"
 
 # Uncompress nginx
-tar -xzf nginx.tar.gz
+mkdir /opt/spiffe-nginx
+tar -xzf nginx.tar.gz -C /opt/spiffe-nginx
 
 # Create log folder 
 mkdir -p ${NGINX_LOGS_DIR}
 touch ${NGINX_LOGS_DIR}/access.log  ${NGINX_LOGS_DIR}/error.log
-chmod 777 ${NGINX_LOGS_DIR}
 chmod 777 ${NGINX_DIR}
 
 # Create certs forlder
