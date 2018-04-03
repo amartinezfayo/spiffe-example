@@ -20,7 +20,8 @@ chmod 777 /certs
 # Create blog user
 useradd -m nginx-blog
 
-chmod 777 /dev/stdout 
+# There is a bug in docker where /dev/stdout return permission error
+echo 'chmod 777 /dev/stdout' >> ~/.bashrc
 
 # Clean installation files
 rm install_nginx.sh nginx.tar.gz vendor.sh

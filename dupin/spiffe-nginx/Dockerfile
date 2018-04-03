@@ -15,14 +15,6 @@ RUN apt-get update && apt-get -y install \
 
 ENV GOPATH=/root/go
 
-# Build Spire
-COPY repos/spire /root/go/src/github.com/spiffe/spire
-WORKDIR /root/go/src/github.com/spiffe/spire/
-RUN ./build.sh setup
-RUN ./build.sh vendor
-RUN ./build.sh binaries
-RUN ./build.sh artifact
-
 # Copy nginx local configurations
 COPY configurations /usr/local/nginx/
 

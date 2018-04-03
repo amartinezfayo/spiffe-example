@@ -8,7 +8,6 @@ all: build-artifact
 build-artifact:
 	docker-compose build $(DOCKER_IMAGE)
 	docker-compose up -d $(DOCKER_IMAGE)
-	docker-compose exec $(DOCKER_IMAGE) find /root/go/src/github.com/spiffe/spire/ -name '*.tgz' -exec cp {} /home/spiffe-nginx/artifact.tgz \;
 	docker-compose stop $(DOCKER_IMAGE)
 
 demo:
@@ -23,4 +22,4 @@ harness: $(DOCKER_IMAGE)
 clean:
 	docker-compose down
 
-.PHONY: checkout build-artifact build-services demo clean
+.PHONY: build-artifact harness demo clean
