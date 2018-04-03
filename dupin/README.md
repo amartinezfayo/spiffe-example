@@ -1,6 +1,6 @@
-# spiffe-nginx Demo
+# nginx with SPIFFE support
 
-This demo shows nginx working with the SPIFFE Workload API to get SVIDs in order to perform mTLS between two nginx servers.
+This example shows nginx working with the SPIFFE Workload API to get SVIDs in order to perform mTLS between two nginx servers.
 
 The scenario simulates the presence of a front-end server proxying the connections to a blog service.
 
@@ -35,7 +35,7 @@ When the server is proxying connections to another server, the following directi
 - [nginx_fe.conf](spiffe-nginx/configurations/nginx_fe.conf)
 - [nginx_blog.conf](spiffe-nginx/configurations/nginx_blog.conf)
 
-## Running the demo
+## Running the example
 
 1. Run `make`. This builds the docker image.
 
